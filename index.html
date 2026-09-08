@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hypothyroid Assist</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="omrs-page">
+
+  <div class="app-header">
+    <a href="https://shurmad.b513.live/openmrs/referenceapplication/home.page" class="logo-link">
+      <img src="OpenMRS_logo.png" alt="OpenMRS" class="logo">
+    </a>
+  </div>
+
+  <div id="hypothyroid-root">
+
+    <div id="ha-loading" class="ha-loading-panel">
+      <span class="ha-spinner"></span>
+      <span>Loading thyroid data...</span>
+    </div>
+
+    <div id="ha-error" class="ha-error-panel" style="display:none;">
+      <strong>Hypothyroid Assist</strong>
+      <p id="ha-error-msg"></p>
+    </div>
+
+    <div id="ha-main" style="display:none;">
+
+      <div class="ha-app-title-row">
+        <h1>Hypothyroid Assist</h1>
+      </div>
+
+      <div class="ha-patient-card">
+        <div>
+          <div id="ha-patient-name" class="ha-patient-name">Patient</div>
+          <div id="ha-patient-details" class="ha-patient-details"></div>
+        </div>
+      </div>
+
+      <div class="ha-two-column-layout">
+
+        <div class="ha-column">
+          <div class="ha-widget">
+            <div class="ha-widget-title">Observations</div>
+            <div id="ha-values" class="ha-values-row"></div>
+          </div>
+
+          <div class="ha-widget">
+            <div class="ha-widget-title">Active Conditions</div>
+            <div id="ha-active-conditions" class="ha-conditions-list">
+              Loading conditions...
+            </div>
+          </div>
+
+          <div class="ha-widget">
+            <div class="ha-widget-title">Active Medications</div>
+            <div id="ha-active-medications" class="ha-conditions-list">
+              Loading medications...
+            </div>
+          </div>
+
+          <div class="ha-widget">
+            <div class="ha-widget-title">Additional Questions</div>
+            <div id="ha-additional-questions" class="ha-questions"></div>
+          </div>
+
+        </div>
+
+        <div class="ha-column">
+          <div id="ha-chart-container" class="ha-widget">
+            <div class="ha-widget-title">
+              TSH Trend
+              <span id="ha-chart-range-label" class="ha-chart-range-label"></span>
+            </div>
+            <canvas id="ha-tsh-chart"></canvas>
+          </div>
+
+          <div id="ha-ft4-chart-container" class="ha-widget">
+            <div class="ha-widget-title">
+              FT4 Trend
+              <span id="ha-ft4-chart-range-label" class="ha-chart-range-label"></span>
+            </div>
+            <canvas id="ha-ft4-chart"></canvas>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="ha-recommendation-action">
+        <button id="ha-get-recommendation-btn" class="ha-get-recommendation-btn">
+          Get Recommendation
+        </button>
+      </div>
+
+      <div id="ha-recommendation-widget" class="ha-widget ha-recommendation-widget" style="display:none;">
+        <div class="ha-widget-title ha-recommendation-widget-title">
+          Recommendation
+        </div>
+        <div id="ha-final-recommendation" class="ha-final-recommendation"></div>
+      </div>
+
+      <div id="ha-actions" class="ha-actions"></div>
+
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="rules.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

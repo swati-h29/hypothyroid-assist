@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "name": "HypothyroidAssist",
+  "description": "Clinical Decision Support for hypothyroidism diagnosis and monitoring",
+  "launch_path": "index.html",
+  "type": "openmrs-owa",
+  "icons": {
+    "16": "img/icons/mortar-16.png",
+    "48": "img/icons/mortar-48.png",
+    "128": "img/icons/mortar-128.png"
+},
+  "developer": {
+  "name": "Swati Hurmade",
+  "url": "http://me.com"
+},
+  "default_locale": "en",
+  "activities": {
+      "openmrs": {
+          "href": "*"
+   }
+}
+}
